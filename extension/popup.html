@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; width: 320px; padding: 12px; }
+    #score { font-size: 34px; font-weight: bold; }
+    #band { font-size: 15px; color: #444; margin-bottom: 6px; }
+    #summary { color: #555; font-size: 12px; }
+    button { margin: 10px 0; padding: 8px 12px; cursor: pointer; display: none; }
+    ul { padding-left: 0; list-style: none; }
+    li { border-left: 5px solid #999; padding: 6px 8px; margin: 8px 0;
+         background: #f6f6f6; cursor: pointer; font-size: 13px; }
+    li.high { border-color: #d32f2f; }
+    li.medium { border-color: #ef6c00; }
+    li.low { border-color: #f9a825; }
+    .title { font-weight: bold; }
+    .evidence { color: #333; margin-top: 3px; }
+    .why { color: #666; margin-top: 3px; }
+  </style>
+</head>
+<body>
+  <h3>Dark Pattern Detector</h3>
+  <div id="score">--</div>
+  <div id="band">Scanning...</div>
+  <div id="summary"></div>
+  <button id="openReport">Open full report</button>
+  <ul id="findings"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>

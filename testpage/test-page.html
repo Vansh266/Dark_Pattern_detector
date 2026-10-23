@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Super Shoes Store (test page)</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+  <h1>Super Shoes Store</h1>
+
+  <p id="timer" class="countdown-timer">Hurry! Offer ends in 09:59</p>
+  <p>Only 2 left in stock!</p>
+
+  <label>
+    <input type="checkbox" checked>
+    Yes, send me offers from partners
+  </label>
+
+  <br><br>
+  <button>Buy now</button>
+  <br><br>
+  <a href="#" style="font-size: 9px; color: #cccccc;">No thanks, I hate saving money</a>
+
+  <script>
+    let seconds = 599;
+    setInterval(() => {
+      seconds--;
+      const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+      const s = String(seconds % 60).padStart(2, "0");
+      document.getElementById("timer").textContent = "Hurry! Offer ends in " + m + ":" + s;
+    }, 1000);
+  </script>
+</body>
+</html>

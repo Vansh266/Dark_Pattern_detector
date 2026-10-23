@@ -1,0 +1,2728 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+backend/
+  ml/
+    __init__.py
+    minorfile.ipynb
+    minorpynbfile.ipynb
+    model.joblib
+    predict.py
+  main.py
+  merge.py
+  pricing.py
+  report.py
+  rules.py
+  schemas.py
+extension/
+  background.js
+  content.js
+  manifest.json
+  popup.html
+  popup.js
+  report.html
+  report.js
+testpage/
+  clean-page.html
+  pricing-clean.html
+  pricing-page.html
+  test-page.html
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="backend/ml/__init__.py">
+
+</file>
+
+<file path="backend/ml/minorfile.ipynb">
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 467
+        },
+        "id": "BB0frxMg_C0k",
+        "outputId": "59038058-0c2a-4672-dbaf-214d1fb09981"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(2356, 4)\n",
+            "['page_id', 'text', 'label', 'Pattern Category']\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "   page_id                                               text  label  \\\n",
+              "0     1012            FLASH SALE | LIMITED TIME ONLY Shop Now      1   \n",
+              "1      158                                Pillowcases & Shams      0   \n",
+              "2      108                                     Write a review      0   \n",
+              "3     1425  To start your return, simply click on the foll...      0   \n",
+              "4     1658                newsletter signup (privacy policy)       0   \n",
+              "5      975                                          In demand      1   \n",
+              "6     1469  We cannot guarantee door to door delivery for ...      0   \n",
+              "7     1570                        Hurry! Only 2 left in stock      1   \n",
+              "8     1617                               In Stock only 3 left      1   \n",
+              "9      108                      International Shipping Policy      0   \n",
+              "\n",
+              "   Pattern Category  \n",
+              "0           Urgency  \n",
+              "1  Not Dark Pattern  \n",
+              "2  Not Dark Pattern  \n",
+              "3  Not Dark Pattern  \n",
+              "4  Not Dark Pattern  \n",
+              "5          Scarcity  \n",
+              "6  Not Dark Pattern  \n",
+              "7          Scarcity  \n",
+              "8          Scarcity  \n",
+              "9  Not Dark Pattern  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-a8aabad0-0d93-4b17-b69d-b0f02b0894b0\" class=\"colab-df-container\">\n",
+              "    <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>page_id</th>\n",
+              "      <th>text</th>\n",
+              "      <th>label</th>\n",
+              "      <th>Pattern Category</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1012</td>\n",
+              "      <td>FLASH SALE | LIMITED TIME ONLY Shop Now</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Urgency</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>158</td>\n",
+              "      <td>Pillowcases &amp; Shams</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>108</td>\n",
+              "      <td>Write a review</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>1425</td>\n",
+              "      <td>To start your return, simply click on the foll...</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>1658</td>\n",
+              "      <td>newsletter signup (privacy policy)</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>975</td>\n",
+              "      <td>In demand</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>1469</td>\n",
+              "      <td>We cannot guarantee door to door delivery for ...</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>1570</td>\n",
+              "      <td>Hurry! Only 2 left in stock</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>1617</td>\n",
+              "      <td>In Stock only 3 left</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>108</td>\n",
+              "      <td>International Shipping Policy</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "    <div class=\"colab-df-buttons\">\n",
+              "\n",
+              "  <div class=\"colab-df-container\">\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-a8aabad0-0d93-4b17-b69d-b0f02b0894b0')\"\n",
+              "            title=\"Convert this dataframe to an interactive table.\"\n",
+              "            style=\"display:none;\">\n",
+              "\n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\">\n",
+              "    <path d=\"M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z\"/>\n",
+              "  </svg>\n",
+              "    </button>\n",
+              "\n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-buttons div {\n",
+              "      margin-bottom: 4px;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "    <script>\n",
+              "      const buttonEl =\n",
+              "        document.querySelector('#df-a8aabad0-0d93-4b17-b69d-b0f02b0894b0 button.colab-df-convert');\n",
+              "      buttonEl.style.display =\n",
+              "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "      async function convertToInteractive(key) {\n",
+              "        const element = document.querySelector('#df-a8aabad0-0d93-4b17-b69d-b0f02b0894b0');\n",
+              "        const dataTable =\n",
+              "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                    [key], {});\n",
+              "        if (!dataTable) return;\n",
+              "\n",
+              "        const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "          '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "          + ' to learn more about interactive tables.';\n",
+              "        element.innerHTML = '';\n",
+              "        dataTable['output_type'] = 'display_data';\n",
+              "        await google.colab.output.renderOutput(dataTable, element);\n",
+              "        const docLink = document.createElement('div');\n",
+              "        docLink.innerHTML = docLinkHtml;\n",
+              "        element.appendChild(docLink);\n",
+              "      }\n",
+              "    </script>\n",
+              "  </div>\n",
+              "\n",
+              "\n",
+              "    </div>\n",
+              "  </div>\n"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "dataframe",
+              "variable_name": "df",
+              "summary": "{\n  \"name\": \"df\",\n  \"rows\": 2356,\n  \"fields\": [\n    {\n      \"column\": \"page_id\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 539,\n        \"min\": 1,\n        \"max\": 1818,\n        \"num_unique_values\": 1248,\n        \"samples\": [\n          1657,\n          1756,\n          273\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"text\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 2356,\n        \"samples\": [\n          \"Really good quality contacts and they work well on my eyes. Would definitely order again!!!!\",\n          \"A-Z Luxury Brands\",\n          \"ONLY 3 LEFT IN STOCK!\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"label\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 0,\n        \"min\": 0,\n        \"max\": 1,\n        \"num_unique_values\": 2,\n        \"samples\": [\n          0,\n          1\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Pattern Category\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 8,\n        \"samples\": [\n          \"Not Dark Pattern\",\n          \"Obstruction\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "URL = \"https://raw.githubusercontent.com/yamanalab/ec-darkpattern/master/dataset/dataset.tsv\"\n",
+        "df = pd.read_csv(URL, sep=\"\\t\")\n",
+        "print(df.shape)\n",
+        "print(df.columns.tolist())\n",
+        "df.head(10)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "TEXT_COL = \"text\"\n",
+        "LABEL_COL = \"label\"\n",
+        "CAT_COL = \"Pattern Category\"\n",
+        "GROUP_COL = \"page_id\"\n",
+        "\n",
+        "df = pd.read_csv(URL, sep=\"\\t\")\n",
+        "df = df[[TEXT_COL, LABEL_COL, CAT_COL, GROUP_COL]].dropna()\n",
+        "df[TEXT_COL] = df[TEXT_COL].astype(str).str.strip()\n",
+        "df = df[df[TEXT_COL] != \"\"]\n",
+        "df = df.drop_duplicates(subset=TEXT_COL)\n",
+        "df[LABEL_COL] = df[LABEL_COL].astype(int)\n",
+        "\n",
+        "print(df.shape)\n",
+        "print(\"\\nTexts per category:\")\n",
+        "print(df[CAT_COL].value_counts())\n",
+        "\n",
+        "df[\"words\"] = df[TEXT_COL].str.split().str.len()\n",
+        "print(\"\\nWords per text, by label:\")\n",
+        "print(df.groupby(LABEL_COL)[\"words\"].describe())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1inpFVIr_FRU",
+        "outputId": "a6e0060c-a747-4224-f9f2-5eba0c934d03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(2349, 4)\n",
+            "\n",
+            "Texts per category:\n",
+            "Pattern Category\n",
+            "Not Dark Pattern    1171\n",
+            "Scarcity             418\n",
+            "Social Proof         312\n",
+            "Urgency              210\n",
+            "Misdirection         195\n",
+            "Obstruction           27\n",
+            "Sneaking              12\n",
+            "Forced Action          4\n",
+            "Name: count, dtype: int64\n",
+            "\n",
+            "Words per text, by label:\n",
+            "        count      mean        std  min  25%  50%  75%    max\n",
+            "label                                                        \n",
+            "0      1171.0  5.764304   8.852879  1.0  2.0  3.0  6.0  116.0\n",
+            "1      1178.0  9.105263  12.892568  1.0  4.0  6.0  9.0  143.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.model_selection import GroupShuffleSplit\n",
+        "\n",
+        "gss = GroupShuffleSplit(n_splits=1, test_size=0.3, random_state=42)\n",
+        "train_idx, temp_idx = next(gss.split(df, df[LABEL_COL], df[GROUP_COL]))\n",
+        "train_df = df.iloc[train_idx]\n",
+        "temp_df = df.iloc[temp_idx]\n",
+        "\n",
+        "gss2 = GroupShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\n",
+        "val_idx, test_idx = next(gss2.split(temp_df, temp_df[LABEL_COL], temp_df[GROUP_COL]))\n",
+        "val_df = temp_df.iloc[val_idx]\n",
+        "test_df = temp_df.iloc[test_idx]\n",
+        "\n",
+        "# Proof that no website appears in two sets\n",
+        "assert set(train_df[GROUP_COL]).isdisjoint(set(test_df[GROUP_COL]))\n",
+        "assert set(train_df[GROUP_COL]).isdisjoint(set(val_df[GROUP_COL]))\n",
+        "\n",
+        "for name, d in [(\"train\", train_df), (\"val\", val_df), (\"test\", test_df)]:\n",
+        "    print(name, len(d), \"rows,\", d[GROUP_COL].nunique(), \"websites, dark share:\", round(d[LABEL_COL].mean(), 2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wpSpA8tl_c7o",
+        "outputId": "32463204-1e8a-4d84-dc14-9707067ff681"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "train 1609 rows, 873 websites, dark share: 0.51\n",
+            "val 354 rows, 187 websites, dark share: 0.5\n",
+            "test 386 rows, 188 websites, dark share: 0.45\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.pipeline import Pipeline\n",
+        "from sklearn.feature_extraction.text import TfidfVectorizer\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "\n",
+        "# Ordinary short UI text the model should learn is NOT manipulative\n",
+        "NEG_TRAIN = [\n",
+        "    \"No thanks\", \"No, thanks\", \"Not now\", \"Maybe later\", \"Skip\", \"Cancel\", \"Close\",\n",
+        "    \"Decline\", \"No\", \"Continue shopping\", \"Add to cart\", \"Add to bag\", \"Buy now\",\n",
+        "    \"Checkout\", \"Proceed to checkout\", \"Sign in\", \"Sign up\", \"Log in\", \"Create account\",\n",
+        "    \"My account\", \"Contact us\", \"About us\", \"Help\", \"FAQ\", \"Search\", \"Shop all\",\n",
+        "    \"New arrivals\", \"View details\", \"Learn more\", \"Read more\", \"Submit\", \"Send\", \"Save\",\n",
+        "    \"Next\", \"Back\", \"Continue\", \"Confirm\", \"Apply\", \"Update cart\", \"Remove\",\n",
+        "    \"Your cart is empty\", \"Shipping information\", \"Return policy\", \"Privacy policy\",\n",
+        "    \"Terms and conditions\", \"Track your order\", \"Gift cards\", \"Size guide\", \"Reviews\",\n",
+        "    \"Wishlist\", \"Subscribe\", \"Email address\", \"Accept cookies\", \"Reject cookies\",\n",
+        "    \"Manage preferences\", \"Free shipping on orders over 50\",\n",
+        "]\n",
+        "\n",
+        "# Kept OUT of training, used only to check the model generalises\n",
+        "NEG_HELDOUT = [\n",
+        "    \"No thank you\", \"Not right now\", \"Remind me later\", \"Close window\", \"Keep browsing\",\n",
+        "    \"View cart\", \"Add to wishlist\", \"Save for later\", \"Proceed to payment\",\n",
+        "    \"Enter your email address\", \"Customer support\", \"Order history\",\n",
+        "]\n",
+        "\n",
+        "# Repeat each x3 so the model notices them among ~1,600 training rows\n",
+        "neg_df = pd.DataFrame({TEXT_COL: NEG_TRAIN * 3, LABEL_COL: 0})\n",
+        "train_plus = pd.concat([train_df[[TEXT_COL, LABEL_COL]], neg_df], ignore_index=True)\n",
+        "\n",
+        "model = Pipeline([\n",
+        "    (\"tfidf\", TfidfVectorizer(ngram_range=(1, 2), min_df=2, sublinear_tf=True)),\n",
+        "    (\"clf\", LogisticRegression(max_iter=1000, class_weight=\"balanced\")),\n",
+        "])\n",
+        "model.fit(train_plus[TEXT_COL], train_plus[LABEL_COL])\n",
+        "print(\"trained on\", len(train_plus), \"rows\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Cxo_8Y5Y_UfC",
+        "outputId": "591c6758-366b-43d8-ba48-5c26b40bd87c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "trained on 1777 rows\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.metrics import precision_score, recall_score, f1_score, classification_report, confusion_matrix\n",
+        "\n",
+        "probs = model.predict_proba(val_df[TEXT_COL])[:, 1]\n",
+        "y_val = val_df[LABEL_COL]\n",
+        "\n",
+        "best = None\n",
+        "print(\"threshold  precision  recall    f1\")\n",
+        "for t in np.arange(0.30, 0.91, 0.05):\n",
+        "    pred = (probs >= t).astype(int)\n",
+        "    p = precision_score(y_val, pred, zero_division=0)\n",
+        "    r = recall_score(y_val, pred)\n",
+        "    f = f1_score(y_val, pred)\n",
+        "    print(f\"{t:.2f}       {p:.3f}      {r:.3f}     {f:.3f}\")\n",
+        "    if p >= 0.95 and (best is None or f > best[1]):\n",
+        "        best = (t, f)\n",
+        "\n",
+        "chosen_threshold = round(best[0], 2) if best else 0.5\n",
+        "print(\"\\nChosen threshold (best F1 while precision >= 0.95):\", chosen_threshold)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KfINwfSd_gQz",
+        "outputId": "49f8399b-4296-44bc-ca58-784c6ab601e5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "threshold  precision  recall    f1\n",
+            "0.30       0.856      0.972     0.910\n",
+            "0.35       0.905      0.966     0.934\n",
+            "0.40       0.918      0.955     0.936\n",
+            "0.45       0.938      0.944     0.941\n",
+            "0.50       0.958      0.893     0.924\n",
+            "0.55       0.981      0.870     0.922\n",
+            "0.60       0.980      0.842     0.906\n",
+            "0.65       0.993      0.808     0.891\n",
+            "0.70       0.993      0.757     0.859\n",
+            "0.75       0.992      0.695     0.817\n",
+            "0.80       1.000      0.582     0.736\n",
+            "0.85       1.000      0.503     0.669\n",
+            "0.90       1.000      0.379     0.549\n",
+            "\n",
+            "Chosen threshold (best F1 while precision >= 0.95): 0.5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "THRESHOLD = chosen_threshold\n",
+        "\n",
+        "test_probs = model.predict_proba(test_df[TEXT_COL])[:, 1]\n",
+        "test_pred = (test_probs >= THRESHOLD).astype(int)\n",
+        "y_test = test_df[LABEL_COL]\n",
+        "\n",
+        "print(\"Threshold:\", THRESHOLD)\n",
+        "print(classification_report(y_test, test_pred, digits=3))\n",
+        "cm = confusion_matrix(y_test, test_pred)\n",
+        "print(cm)\n",
+        "tn, fp, fn, tp = cm.ravel()\n",
+        "print(\"false positive rate:\", round(fp / (fp + tn), 3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0RvZwfIY_l6q",
+        "outputId": "b965ad6f-760a-47a5-9312-15ecb3f358ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Threshold: 0.5\n",
+            "              precision    recall  f1-score   support\n",
+            "\n",
+            "           0      0.931     0.957     0.944       211\n",
+            "           1      0.947     0.914     0.930       175\n",
+            "\n",
+            "    accuracy                          0.938       386\n",
+            "   macro avg      0.939     0.936     0.937       386\n",
+            "weighted avg      0.938     0.938     0.938       386\n",
+            "\n",
+            "[[202   9]\n",
+            " [ 15 160]]\n",
+            "false positive rate: 0.043\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Held-out ordinary UI text (want LOW):\")\n",
+        "for s, p in zip(NEG_HELDOUT, model.predict_proba(NEG_HELDOUT)[:, 1]):\n",
+        "    print(f\"{p:.2f}  {s}\")\n",
+        "\n",
+        "positives = [\n",
+        "    \"Only 2 left in stock!\", \"Hurry! Offer ends in 09:59\",\n",
+        "    \"12 people are viewing this right now\", \"Last chance - sale ends tonight\",\n",
+        "    \"No thanks, I hate saving money\", \"No, I don't want to save money\",\n",
+        "    \"No thanks, I'd rather pay full price\",\n",
+        "]\n",
+        "print(\"\\nSuspicious text (want HIGH):\")\n",
+        "for s, p in zip(positives, model.predict_proba(positives)[:, 1]):\n",
+        "    print(f\"{p:.2f}  {s}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-U4b59m3_s6u",
+        "outputId": "2db7b8f5-a934-4340-98b1-d2ba229bff9b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Held-out ordinary UI text (want LOW):\n",
+            "0.36  No thank you\n",
+            "0.41  Not right now\n",
+            "0.17  Remind me later\n",
+            "0.15  Close window\n",
+            "0.21  Keep browsing\n",
+            "0.15  View cart\n",
+            "0.19  Add to wishlist\n",
+            "0.34  Save for later\n",
+            "0.19  Proceed to payment\n",
+            "0.20  Enter your email address\n",
+            "0.18  Customer support\n",
+            "0.27  Order history\n",
+            "\n",
+            "Suspicious text (want HIGH):\n",
+            "0.99  Only 2 left in stock!\n",
+            "0.89  Hurry! Offer ends in 09:59\n",
+            "0.85  12 people are viewing this right now\n",
+            "0.65  Last chance - sale ends tonight\n",
+            "0.53  No thanks, I hate saving money\n",
+            "0.79  No, I don't want to save money\n",
+            "0.92  No thanks, I'd rather pay full price\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dark_train = train_df[train_df[LABEL_COL] == 1]\n",
+        "dark_test = test_df[test_df[LABEL_COL] == 1]\n",
+        "\n",
+        "cat_model = Pipeline([\n",
+        "    (\"tfidf\", TfidfVectorizer(ngram_range=(1, 2), min_df=2, sublinear_tf=True)),\n",
+        "    (\"clf\", LogisticRegression(max_iter=1000, class_weight=\"balanced\")),\n",
+        "])\n",
+        "cat_model.fit(dark_train[TEXT_COL], dark_train[CAT_COL])\n",
+        "\n",
+        "print(classification_report(\n",
+        "    dark_test[CAT_COL], cat_model.predict(dark_test[TEXT_COL]),\n",
+        "    digits=3, zero_division=0))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3I7lceSYB7of",
+        "outputId": "5969d390-0d22-40b5-faea-24c1e58feab8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "              precision    recall  f1-score   support\n",
+            "\n",
+            "Misdirection      0.963     0.867     0.912        30\n",
+            " Obstruction      0.833     1.000     0.909         5\n",
+            "    Scarcity      1.000     0.948     0.973        58\n",
+            "    Sneaking      0.000     0.000     0.000         1\n",
+            "Social Proof      0.911     1.000     0.953        51\n",
+            "     Urgency      0.903     0.933     0.918        30\n",
+            "\n",
+            "    accuracy                          0.943       175\n",
+            "   macro avg      0.768     0.791     0.778       175\n",
+            "weighted avg      0.941     0.943     0.940       175\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "samples = [\n",
+        "    \"Add to cart\", \"Contact us\", \"Sign in\", \"No thanks\", \"Your cart is empty\",\n",
+        "    \"Free delivery on orders above 499\", \"Subscribe to our newsletter\",\n",
+        "    \"Only 2 left in stock!\", \"Hurry! Offer ends in 09:59\",\n",
+        "    \"12 people are viewing this right now\",\n",
+        "    \"No thanks, I hate saving money\", \"Yes, send me offers from partners\",\n",
+        "]\n",
+        "for s, p in zip(samples, model.predict_proba(samples)[:, 1]):\n",
+        "    print(f\"{p:.2f}  {s}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3KW02hex_0NJ",
+        "outputId": "a7bb5b37-789a-4817-825b-b689d400970f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.36  Add to cart\n",
+            "0.27  Contact us\n",
+            "0.28  Sign in\n",
+            "0.94  No thanks\n",
+            "0.36  Your cart is empty\n",
+            "0.37  Free delivery on orders above 499\n",
+            "0.19  Subscribe to our newsletter\n",
+            "0.99  Only 2 left in stock!\n",
+            "0.89  Hurry! Offer ends in 09:59\n",
+            "0.86  12 people are viewing this right now\n",
+            "0.78  No thanks, I hate saving money\n",
+            "0.32  Yes, send me offers from partners\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import joblib\n",
+        "import sklearn\n",
+        "from google.colab import files\n",
+        "\n",
+        "print(\"scikit-learn version:\", sklearn.__version__)   # write this down\n",
+        "joblib.dump({\n",
+        "    \"pipeline\": model,\n",
+        "    \"threshold\": THRESHOLD,\n",
+        "    \"category_pipeline\": cat_model,\n",
+        "}, \"model.joblib\")\n",
+        "files.download(\"model.joblib\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "id": "bk-4tIgY_4IM",
+        "outputId": "528cc6b4-abd4-401b-9e40-01b18d5485b8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "scikit-learn version: 1.6.1\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Javascript object>"
+            ],
+            "application/javascript": [
+              "\n",
+              "    async function download(id, filename, size) {\n",
+              "      if (!google.colab.kernel.accessAllowed) {\n",
+              "        return;\n",
+              "      }\n",
+              "      const div = document.createElement('div');\n",
+              "      const label = document.createElement('label');\n",
+              "      label.textContent = `Downloading \"${filename}\": `;\n",
+              "      div.appendChild(label);\n",
+              "      const progress = document.createElement('progress');\n",
+              "      progress.max = size;\n",
+              "      div.appendChild(progress);\n",
+              "      document.body.appendChild(div);\n",
+              "\n",
+              "      const buffers = [];\n",
+              "      let downloaded = 0;\n",
+              "\n",
+              "      const channel = await google.colab.kernel.comms.open(id);\n",
+              "      // Send a message to notify the kernel that we're ready.\n",
+              "      channel.send({})\n",
+              "\n",
+              "      for await (const message of channel.messages) {\n",
+              "        // Send a message to notify the kernel that we're ready.\n",
+              "        channel.send({})\n",
+              "        if (message.buffers) {\n",
+              "          for (const buffer of message.buffers) {\n",
+              "            buffers.push(buffer);\n",
+              "            downloaded += buffer.byteLength;\n",
+              "            progress.value = downloaded;\n",
+              "          }\n",
+              "        }\n",
+              "      }\n",
+              "      const blob = new Blob(buffers, {type: 'application/binary'});\n",
+              "      const a = document.createElement('a');\n",
+              "      a.href = window.URL.createObjectURL(blob);\n",
+              "      a.download = filename;\n",
+              "      div.appendChild(a);\n",
+              "      a.click();\n",
+              "      div.remove();\n",
+              "    }\n",
+              "  "
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Javascript object>"
+            ],
+            "application/javascript": [
+              "download(\"download_75a08e6f-9817-4bd7-abfd-2f04d6a09c3d\", \"model.joblib\", 137716)"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "D7VdAI5xADfh"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
+</file>
+
+<file path="backend/ml/minorpynbfile.ipynb">
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 799
+        },
+        "id": "BB0frxMg_C0k",
+        "outputId": "90c084a8-036a-4fa9-ad15-f643b5bb8aef"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(2356, 4)\n",
+            "['page_id', 'text', 'label', 'Pattern Category']\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "   page_id                                               text  label  \\\n",
+              "0     1012            FLASH SALE | LIMITED TIME ONLY Shop Now      1   \n",
+              "1      158                                Pillowcases & Shams      0   \n",
+              "2      108                                     Write a review      0   \n",
+              "3     1425  To start your return, simply click on the foll...      0   \n",
+              "4     1658                newsletter signup (privacy policy)       0   \n",
+              "5      975                                          In demand      1   \n",
+              "6     1469  We cannot guarantee door to door delivery for ...      0   \n",
+              "7     1570                        Hurry! Only 2 left in stock      1   \n",
+              "8     1617                               In Stock only 3 left      1   \n",
+              "9      108                      International Shipping Policy      0   \n",
+              "\n",
+              "   Pattern Category  \n",
+              "0           Urgency  \n",
+              "1  Not Dark Pattern  \n",
+              "2  Not Dark Pattern  \n",
+              "3  Not Dark Pattern  \n",
+              "4  Not Dark Pattern  \n",
+              "5          Scarcity  \n",
+              "6  Not Dark Pattern  \n",
+              "7          Scarcity  \n",
+              "8          Scarcity  \n",
+              "9  Not Dark Pattern  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-70bf28f6-d53f-411b-b4f5-d5231cbfe3c1\" class=\"colab-df-container\">\n",
+              "    <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>page_id</th>\n",
+              "      <th>text</th>\n",
+              "      <th>label</th>\n",
+              "      <th>Pattern Category</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1012</td>\n",
+              "      <td>FLASH SALE | LIMITED TIME ONLY Shop Now</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Urgency</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>158</td>\n",
+              "      <td>Pillowcases &amp; Shams</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>108</td>\n",
+              "      <td>Write a review</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>1425</td>\n",
+              "      <td>To start your return, simply click on the foll...</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>1658</td>\n",
+              "      <td>newsletter signup (privacy policy)</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>975</td>\n",
+              "      <td>In demand</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>1469</td>\n",
+              "      <td>We cannot guarantee door to door delivery for ...</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>1570</td>\n",
+              "      <td>Hurry! Only 2 left in stock</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>1617</td>\n",
+              "      <td>In Stock only 3 left</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Scarcity</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>108</td>\n",
+              "      <td>International Shipping Policy</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Not Dark Pattern</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "    <div class=\"colab-df-buttons\">\n",
+              "\n",
+              "  <div class=\"colab-df-container\">\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-70bf28f6-d53f-411b-b4f5-d5231cbfe3c1')\"\n",
+              "            title=\"Convert this dataframe to an interactive table.\"\n",
+              "            style=\"display:none;\">\n",
+              "\n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\">\n",
+              "    <path d=\"M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z\"/>\n",
+              "  </svg>\n",
+              "    </button>\n",
+              "\n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-buttons div {\n",
+              "      margin-bottom: 4px;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "    <script>\n",
+              "      const buttonEl =\n",
+              "        document.querySelector('#df-70bf28f6-d53f-411b-b4f5-d5231cbfe3c1 button.colab-df-convert');\n",
+              "      buttonEl.style.display =\n",
+              "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "      async function convertToInteractive(key) {\n",
+              "        const element = document.querySelector('#df-70bf28f6-d53f-411b-b4f5-d5231cbfe3c1');\n",
+              "        const dataTable =\n",
+              "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                    [key], {});\n",
+              "        if (!dataTable) return;\n",
+              "\n",
+              "        const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "          '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "          + ' to learn more about interactive tables.';\n",
+              "        element.innerHTML = '';\n",
+              "        dataTable['output_type'] = 'display_data';\n",
+              "        await google.colab.output.renderOutput(dataTable, element);\n",
+              "        const docLink = document.createElement('div');\n",
+              "        docLink.innerHTML = docLinkHtml;\n",
+              "        element.appendChild(docLink);\n",
+              "      }\n",
+              "    </script>\n",
+              "  </div>\n",
+              "\n",
+              "\n",
+              "    </div>\n",
+              "  </div>\n"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "dataframe",
+              "variable_name": "df",
+              "summary": "{\n  \"name\": \"df\",\n  \"rows\": 2356,\n  \"fields\": [\n    {\n      \"column\": \"page_id\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 539,\n        \"min\": 1,\n        \"max\": 1818,\n        \"num_unique_values\": 1248,\n        \"samples\": [\n          1657,\n          1756,\n          273\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"text\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 2356,\n        \"samples\": [\n          \"Really good quality contacts and they work well on my eyes. Would definitely order again!!!!\",\n          \"A-Z Luxury Brands\",\n          \"ONLY 3 LEFT IN STOCK!\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"label\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 0,\n        \"min\": 0,\n        \"max\": 1,\n        \"num_unique_values\": 2,\n        \"samples\": [\n          0,\n          1\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Pattern Category\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 8,\n        \"samples\": [\n          \"Not Dark Pattern\",\n          \"Obstruction\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "metadata": {},
+          "execution_count": 1
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "URL = \"https://raw.githubusercontent.com/yamanalab/ec-darkpattern/master/dataset/dataset.tsv\"\n",
+        "df = pd.read_csv(URL, sep=\"\\t\")\n",
+        "print(df.shape)\n",
+        "print(df.columns.tolist())\n",
+        "df.head(10)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "TEXT_COL = \"text\"    # change if Cell 1 showed a different column name for the text\n",
+        "LABEL_COL = \"label\"  # change if Cell 1 showed a different column name for dark / not dark\n",
+        "\n",
+        "df = df[[TEXT_COL, LABEL_COL]].dropna()\n",
+        "df[TEXT_COL] = df[TEXT_COL].astype(str).str.strip()\n",
+        "df = df[df[TEXT_COL] != \"\"]\n",
+        "\n",
+        "before = len(df)\n",
+        "df = df.drop_duplicates(subset=TEXT_COL)   # duplicates in train AND test would inflate your scores\n",
+        "print(\"duplicates removed:\", before - len(df))\n",
+        "\n",
+        "df[LABEL_COL] = df[LABEL_COL].astype(int)\n",
+        "print(df[LABEL_COL].value_counts())\n",
+        "\n",
+        "# Check which label means \"dark\": read a few examples of each\n",
+        "for lab in sorted(df[LABEL_COL].unique()):\n",
+        "    print(\"\\nLabel\", lab, \"examples:\")\n",
+        "    print(df[df[LABEL_COL] == lab][TEXT_COL].head(5).to_string())\n",
+        "\n",
+        "# Compare text lengths (in words) between the two groups\n",
+        "df[\"words\"] = df[TEXT_COL].str.split().str.len()\n",
+        "print(\"\\nWords per text, by label:\")\n",
+        "print(df.groupby(LABEL_COL)[\"words\"].describe())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1inpFVIr_FRU",
+        "outputId": "0199cf9a-b79d-4eb5-ca73-a4381aea53cd"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "duplicates removed: 7\n",
+            "label\n",
+            "1    1178\n",
+            "0    1171\n",
+            "Name: count, dtype: int64\n",
+            "\n",
+            "Label 0 examples:\n",
+            "1                                  Pillowcases & Shams\n",
+            "2                                       Write a review\n",
+            "3    To start your return, simply click on the foll...\n",
+            "4                   newsletter signup (privacy policy)\n",
+            "6    We cannot guarantee door to door delivery for ...\n",
+            "\n",
+            "Label 1 examples:\n",
+            "0     FLASH SALE | LIMITED TIME ONLY Shop Now\n",
+            "5                                   In demand\n",
+            "7                 Hurry! Only 2 left in stock\n",
+            "8                        In Stock only 3 left\n",
+            "11                         Hurry! Only 2 left\n",
+            "\n",
+            "Words per text, by label:\n",
+            "        count      mean        std  min  25%  50%  75%    max\n",
+            "label                                                        \n",
+            "0      1171.0  5.764304   8.852879  1.0  2.0  3.0  6.0  116.0\n",
+            "1      1178.0  9.105263  12.892568  1.0  4.0  6.0  9.0  143.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.model_selection import train_test_split\n",
+        "\n",
+        "X = df[TEXT_COL]\n",
+        "y = df[LABEL_COL]\n",
+        "\n",
+        "X_train, X_temp, y_train, y_temp = train_test_split(\n",
+        "    X, y, test_size=0.3, random_state=42, stratify=y)\n",
+        "X_val, X_test, y_val, y_test = train_test_split(\n",
+        "    X_temp, y_temp, test_size=0.5, random_state=42, stratify=y_temp)\n",
+        "\n",
+        "print(\"train:\", len(X_train), \" validation:\", len(X_val), \" test:\", len(X_test))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wpSpA8tl_c7o",
+        "outputId": "e69575a3-52bd-46ee-847e-a844e893d292"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "train: 1644  validation: 352  test: 353\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.pipeline import Pipeline\n",
+        "from sklearn.feature_extraction.text import TfidfVectorizer\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "\n",
+        "model = Pipeline([\n",
+        "    (\"tfidf\", TfidfVectorizer(ngram_range=(1, 2), min_df=2, sublinear_tf=True)),\n",
+        "    (\"clf\", LogisticRegression(max_iter=1000, class_weight=\"balanced\")),\n",
+        "])\n",
+        "model.fit(X_train, y_train)\n",
+        "print(\"trained\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Cxo_8Y5Y_UfC",
+        "outputId": "b25d016f-1d75-47a9-f125-7eb8e2697d68"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "trained\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.metrics import classification_report, confusion_matrix\n",
+        "\n",
+        "val_pred = model.predict(X_val)\n",
+        "print(classification_report(y_val, val_pred, digits=3))\n",
+        "print(\"Confusion matrix (rows = truth, columns = prediction):\")\n",
+        "print(confusion_matrix(y_val, val_pred))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KfINwfSd_gQz",
+        "outputId": "bc392f59-f3b6-4a5d-863b-a48db162d681"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "              precision    recall  f1-score   support\n",
+            "\n",
+            "           0      0.876     0.971     0.921       175\n",
+            "           1      0.968     0.864     0.913       177\n",
+            "\n",
+            "    accuracy                          0.918       352\n",
+            "   macro avg      0.922     0.918     0.917       352\n",
+            "weighted avg      0.923     0.918     0.917       352\n",
+            "\n",
+            "Confusion matrix (rows = truth, columns = prediction):\n",
+            "[[170   5]\n",
+            " [ 24 153]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.metrics import precision_score, recall_score, f1_score\n",
+        "\n",
+        "probs = model.predict_proba(X_val)[:, 1]\n",
+        "print(\"threshold  precision  recall   f1\")\n",
+        "for t in [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:\n",
+        "    pred = (probs >= t).astype(int)\n",
+        "    print(f\"{t:.1f}        {precision_score(y_val, pred):.3f}      \"\n",
+        "          f\"{recall_score(y_val, pred):.3f}    {f1_score(y_val, pred):.3f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0RvZwfIY_l6q",
+        "outputId": "21c18c3c-5e4c-479b-c374-437925482bbd"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "threshold  precision  recall   f1\n",
+            "0.3        0.860      0.938    0.897\n",
+            "0.4        0.920      0.915    0.918\n",
+            "0.5        0.968      0.864    0.913\n",
+            "0.6        0.993      0.825    0.901\n",
+            "0.7        1.000      0.751    0.858\n",
+            "0.8        1.000      0.627    0.771\n",
+            "0.9        1.000      0.379    0.549\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "THRESHOLD = 0.7   # replace with the value you chose in Cell 6\n",
+        "\n",
+        "test_probs = model.predict_proba(X_test)[:, 1]\n",
+        "test_pred = (test_probs >= THRESHOLD).astype(int)\n",
+        "\n",
+        "print(classification_report(y_test, test_pred, digits=3))\n",
+        "cm = confusion_matrix(y_test, test_pred)\n",
+        "print(cm)\n",
+        "tn, fp, fn, tp = cm.ravel()\n",
+        "print(\"false positive rate:\", round(fp / (fp + tn), 3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-U4b59m3_s6u",
+        "outputId": "6c214a5b-a695-4807-b8fa-b9c69be1c69f"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "              precision    recall  f1-score   support\n",
+            "\n",
+            "           0      0.825     0.989     0.899       176\n",
+            "           1      0.986     0.791     0.878       177\n",
+            "\n",
+            "    accuracy                          0.890       353\n",
+            "   macro avg      0.905     0.890     0.888       353\n",
+            "weighted avg      0.906     0.890     0.888       353\n",
+            "\n",
+            "[[174   2]\n",
+            " [ 37 140]]\n",
+            "false positive rate: 0.011\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "samples = [\n",
+        "    \"Add to cart\", \"Contact us\", \"Sign in\", \"No thanks\", \"Your cart is empty\",\n",
+        "    \"Free delivery on orders above 499\", \"Subscribe to our newsletter\",\n",
+        "    \"Only 2 left in stock!\", \"Hurry! Offer ends in 09:59\",\n",
+        "    \"12 people are viewing this right now\",\n",
+        "    \"No thanks, I hate saving money\", \"Yes, send me offers from partners\",\n",
+        "]\n",
+        "for s, p in zip(samples, model.predict_proba(samples)[:, 1]):\n",
+        "    print(f\"{p:.2f}  {s}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3KW02hex_0NJ",
+        "outputId": "a7bb5b37-789a-4817-825b-b689d400970f"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.36  Add to cart\n",
+            "0.27  Contact us\n",
+            "0.28  Sign in\n",
+            "0.94  No thanks\n",
+            "0.36  Your cart is empty\n",
+            "0.37  Free delivery on orders above 499\n",
+            "0.19  Subscribe to our newsletter\n",
+            "0.99  Only 2 left in stock!\n",
+            "0.89  Hurry! Offer ends in 09:59\n",
+            "0.86  12 people are viewing this right now\n",
+            "0.78  No thanks, I hate saving money\n",
+            "0.32  Yes, send me offers from partners\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import joblib\n",
+        "import sklearn\n",
+        "from google.colab import files\n",
+        "\n",
+        "print(\"scikit-learn version:\", sklearn.__version__)   # write this down\n",
+        "joblib.dump({\"pipeline\": model, \"threshold\": THRESHOLD}, \"model.joblib\")\n",
+        "files.download(\"model.joblib\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "id": "bk-4tIgY_4IM",
+        "outputId": "f75585df-0980-4bcf-fdc8-2e6de896709e"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "scikit-learn version: 1.6.1\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Javascript object>"
+            ],
+            "application/javascript": [
+              "\n",
+              "    async function download(id, filename, size) {\n",
+              "      if (!google.colab.kernel.accessAllowed) {\n",
+              "        return;\n",
+              "      }\n",
+              "      const div = document.createElement('div');\n",
+              "      const label = document.createElement('label');\n",
+              "      label.textContent = `Downloading \"${filename}\": `;\n",
+              "      div.appendChild(label);\n",
+              "      const progress = document.createElement('progress');\n",
+              "      progress.max = size;\n",
+              "      div.appendChild(progress);\n",
+              "      document.body.appendChild(div);\n",
+              "\n",
+              "      const buffers = [];\n",
+              "      let downloaded = 0;\n",
+              "\n",
+              "      const channel = await google.colab.kernel.comms.open(id);\n",
+              "      // Send a message to notify the kernel that we're ready.\n",
+              "      channel.send({})\n",
+              "\n",
+              "      for await (const message of channel.messages) {\n",
+              "        // Send a message to notify the kernel that we're ready.\n",
+              "        channel.send({})\n",
+              "        if (message.buffers) {\n",
+              "          for (const buffer of message.buffers) {\n",
+              "            buffers.push(buffer);\n",
+              "            downloaded += buffer.byteLength;\n",
+              "            progress.value = downloaded;\n",
+              "          }\n",
+              "        }\n",
+              "      }\n",
+              "      const blob = new Blob(buffers, {type: 'application/binary'});\n",
+              "      const a = document.createElement('a');\n",
+              "      a.href = window.URL.createObjectURL(blob);\n",
+              "      a.download = filename;\n",
+              "      div.appendChild(a);\n",
+              "      a.click();\n",
+              "      div.remove();\n",
+              "    }\n",
+              "  "
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Javascript object>"
+            ],
+            "application/javascript": [
+              "download(\"download_ddb1bc2f-ac98-4ca8-abe4-6605bf9615f7\", \"model.joblib\", 57594)"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "D7VdAI5xADfh"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
+</file>
+
+<file path="backend/ml/predict.py">
+from pathlib import Path
+import joblib
+
+from schemas import Finding
+from rules import SEVERITY
+
+MODEL_PATH = Path(__file__).parent / "model.joblib"
+
+# Deployment threshold. The benchmark threshold saved in the model is 0.5,
+# but real pages are mostly normal text, so the app is stricter (tune in Step 8).
+APP_THRESHOLD = 0.65
+
+# Model tactic names -> report categories.
+# Obstruction / Sneaking / Forced Action had too few examples to trust,
+# so they all become "other_manipulative".
+ML_CATEGORY = {
+    "Urgency": "urgency_scarcity",
+    "Scarcity": "urgency_scarcity",
+    "Social Proof": "social_proof",
+    "Misdirection": "misdirection",
+}
+
+ML_EXPLANATION = {
+    "urgency_scarcity": "The wording resembles urgency or scarcity claims that pressure quick decisions.",
+    "social_proof": "The wording resembles social-proof claims (how many others are viewing or buying) used to push decisions.",
+    "misdirection": "The wording resembles phrasing that steers or guilt-trips users toward one choice.",
+    "other_manipulative": "The wording resembles another type of manipulative design. The model is less reliable for this type.",
+}
+
+ELIGIBLE_TAGS = {"a", "button", "label", "h1", "h2", "h3", "h4", "p", "span", "strong", "b"}
+MAX_WORDS = 60
+
+_bundle = None
+
+
+def model_available():
+    return MODEL_PATH.exists()
+
+
+def _load():
+    global _bundle
+    if _bundle is None:
+        _bundle = joblib.load(MODEL_PATH)
+    return _bundle
+
+
+def predict_texts(texts):
+    """Returns (probability, tactic) for each text. tactic is None if below the threshold."""
+    bundle = _load()
+    probs = bundle["pipeline"].predict_proba(texts)[:, 1]
+
+    flagged = [i for i, p in enumerate(probs) if p >= APP_THRESHOLD]
+    tactics = {}
+    if flagged:
+        names = bundle["category_pipeline"].predict([texts[i] for i in flagged])
+        tactics = dict(zip(flagged, names))
+
+    return [(float(probs[i]), tactics.get(i)) for i in range(len(texts))]
+
+
+def run_ml(elements):
+    candidates = []
+    for el in elements:
+        if el.tag not in ELIGIBLE_TAGS:   # inputs are skipped: their label is checked instead
+            continue
+        words = len(el.text.split())
+        if words == 0 or words > MAX_WORDS:
+            continue
+        candidates.append(el)
+    if not candidates:
+        return []
+
+    unique_texts = list(dict.fromkeys(el.text for el in candidates))
+    scored = dict(zip(unique_texts, predict_texts(unique_texts)))
+
+    findings = []
+    for el in candidates:
+        prob, tactic = scored[el.text]
+        if tactic is None:
+            continue
+        category = ML_CATEGORY.get(tactic, "other_manipulative")
+        findings.append(Finding(
+            element_id=el.id,
+            category=category,
+            method="ml",
+            confidence=round(prob, 2),
+            severity=SEVERITY[category],
+            evidence=f'Text classifier flagged this wording as "{tactic}" (confidence {prob:.0%})',
+            explanation=ML_EXPLANATION[category],
+        ))
+    return findings
+</file>
+
+<file path="backend/main.py">
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from schemas import AnalyzeRequest, AnalyzeResponse
+from rules import run_rules
+from report import build_report
+from merge import merge_findings
+from ml.predict import run_ml, model_available
+from pricing import run_pricing
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+if not model_available():
+    print("WARNING: backend/ml/model.joblib not found. Running rules only.")
+
+
+@app.get("/")
+def home():
+    return {"message": "Backend is running"}
+
+
+@app.post("/analyze", response_model=AnalyzeResponse)
+def analyze(req: AnalyzeRequest):
+    if req.mode in ("rules", "hybrid"):
+        rule_findings = run_rules(req.elements) + run_pricing(req.elements)
+    else:
+        rule_findings = []    
+    use_ml = req.mode in ("ml", "hybrid") and model_available()
+    ml_findings = run_ml(req.elements) if use_ml else []
+    findings = merge_findings(rule_findings, ml_findings)
+
+    counts = {"high": 0, "medium": 0, "low": 0}
+    for f in findings:
+        counts[f.severity] += 1
+
+    risk_score, risk_band, summary, tactics = build_report(findings)
+
+    print(f"{req.url} [{req.mode}]: {len(req.elements)} elements, "
+          f"{len(findings)} findings, score {risk_score} ({risk_band})")
+    for f in findings:
+        print(f"  - [{f.severity}] {f.category} ({f.method}): {f.evidence}")
+
+    return AnalyzeResponse(
+        elements_analyzed=len(req.elements),
+        findings=findings,
+        counts=counts,
+        risk_score=risk_score,
+        risk_band=risk_band,
+        summary=summary,
+        tactics=tactics,
+    )
+</file>
+
+<file path="backend/merge.py">
+# If the model and a rule flag the same element for related reasons,
+# keep ONE finding (marked "rule+ml") instead of counting it twice.
+MERGES_INTO = {
+    "misdirection": ["confirm_shaming"],
+    "social_proof": ["urgency_scarcity"],
+}
+
+
+def merge_findings(rule_findings, ml_findings):
+    merged = list(rule_findings)
+    for m in ml_findings:
+        target = None
+        for f in merged:
+            if f.element_id != m.element_id:
+                continue
+            if f.category == m.category or f.category in MERGES_INTO.get(m.category, []):
+                target = f
+                break
+        if target is None:
+            merged.append(m)
+        else:
+            target.method = "rule+ml"
+            target.confidence = m.confidence
+            target.evidence = target.evidence + " | " + m.evidence
+    return merged
+</file>
+
+<file path="backend/pricing.py">
+import re
+from rules import (
+    normalize, make_finding, parse_px, text_contrast,
+    SMALL_FONT_PX, MIN_CONTRAST,
+)
+
+# Currency amounts: $9.99  ₹299  €5  £3  Rs. 499  INR 299  (written with \u escapes so file encoding can't break it)
+AMOUNT = re.compile(
+    r"(?:[$\u20b9\u20ac\u00a3]\s?|\b(?:rs\.?|inr|usd|eur)\s?)\d[\d,]*(?:\.\d+)?"
+)
+
+TRIAL = re.compile(
+    r"free trial|\d+[- ]days? (?:free )?trial|free for \d+ (?:days?|weeks?|months?)"
+    r"|try (?:it |us )?free|start(?:ing)? (?:your |a )?free"
+)
+RENEWAL_WORDS = re.compile(r"\b(?:then|after|renews?|renewal|billed|charged|auto-?renew)")
+BILLING_TERMS = re.compile(
+    r"auto-?renew|renews? (?:automatically|at|for|on)|billed (?:monthly|annually|yearly|every)"
+    r"|will be charged|cancell?ation fee|recurring (?:payment|charge|billing)"
+    r"|charged (?:monthly|annually|yearly|after)"
+)
+MONTHLY = re.compile(r"/\s?(?:mo|month)\b|per month|a month|monthly")
+ANNUAL_BILLED = re.compile(r"(?:billed|charged|paid) (?:annually|yearly|once a year|upfront)")
+YEARLY_TOTAL = re.compile(r"per year|/\s?(?:yr|year)\b|annually|yearly|a year|total")
+FEE = re.compile(r"(?:service|convenience|handling|processing|booking|platform|delivery) fees?")
+
+
+def short(text):
+    return text.strip()[:60]
+
+
+def obscured_reasons(el):
+    """Measured reasons why an element's text is hard to read."""
+    reasons = []
+    size = parse_px(el.styles.fontSize)
+    if size is not None and size <= SMALL_FONT_PX:
+        reasons.append(f"font size {size:g}px")
+    ratio = text_contrast(el.styles)
+    if ratio is not None and ratio < MIN_CONTRAST:
+        reasons.append(f"text contrast {ratio:.1f}:1")
+    try:
+        opacity = float(el.styles.opacity)
+        if opacity < 0.6:
+            reasons.append(f"opacity {opacity:g}")
+    except ValueError:
+        pass
+    return reasons
+
+
+def run_pricing(elements):
+    findings = []
+    seen = set()   # (category, text) so a parent and child with the same text count once
+
+    def add(el, category, evidence, explanation):
+        key = (category, normalize(el.text))
+        if key in seen:
+            return
+        seen.add(key)
+        findings.append(make_finding(el, category, evidence, explanation))
+
+    items = [(el, normalize(el.text)) for el in elements if el.tag != "input"]
+    trial_els = [el for el, t in items if TRIAL.search(t)]
+    has_offer = bool(trial_els) or any(AMOUNT.search(t) for _, t in items)
+
+    # 1. Free trial with no renewal price or billing date on the page
+    if trial_els:
+        disclosed = any(AMOUNT.search(t) and RENEWAL_WORDS.search(t) for _, t in items)
+        if not disclosed:
+            el = trial_els[0]
+            add(el, "trial_unclear_terms",
+                f'Trial offer ("{short(el.text)}") but no renewal price or billing date appears on this page',
+                "Trials that hide what you pay afterwards rely on people forgetting to cancel. "
+                "The terms may be shown on a later page, which this tool does not check.")
+
+    # 2. Billing terms shown in tiny, faint or see-through text
+    if has_offer:
+        for el, t in items:
+            m = BILLING_TERMS.search(t)
+            if not m:
+                continue
+            reasons = obscured_reasons(el)
+            if reasons:
+                add(el, "obscured_billing_terms",
+                    f'Billing term "{m.group(0)}" is hard to read: ' + ", ".join(reasons),
+                    "Renewal and billing conditions in tiny or faint text are technically disclosed "
+                    "but practically unreadable.")
+
+    # 3. Extra fees shown with an amount
+    for el, t in items:
+        if FEE.search(t) and AMOUNT.search(t):
+            add(el, "extra_fees",
+                f'Additional fee shown: "{short(el.text)}"',
+                "Fees added after the headline price make the real cost higher than the number "
+                "that first attracted you.")
+
+    # 4. Monthly price shown, annual billing mentioned, no yearly total visible
+    monthly_els = [el for el, t in items if AMOUNT.search(t) and MONTHLY.search(t)]
+    annual_els = [el for el, t in items if ANNUAL_BILLED.search(t)]
+    yearly_total_shown = any(AMOUNT.search(t) and YEARLY_TOTAL.search(t) for _, t in items)
+    if monthly_els and annual_els and not yearly_total_shown:
+        el = annual_els[0]
+        add(el, "monthly_vs_annual",
+            f'Monthly price "{short(monthly_els[0].text)}" is shown, but the page says billing is annual and shows no yearly total',
+            "A low per-month figure can hide that a whole year is charged up front.")
+
+    return findings
+</file>
+
+<file path="backend/report.py">
+from collections import defaultdict
+from schemas import TacticSummary
+
+SEVERITY_POINTS = {"low": 6, "medium": 15, "high": 30}
+REPEAT_FACTOR = [1.0, 0.5, 0.25]  # 1st finding of a tactic counts fully, 2nd half, the rest a quarter
+
+TACTICS = {
+    "preselected_optional": {
+        "title": "Pre-ticked optional choices",
+        "how_it_works": (
+            "People rarely change default settings (default bias). A box that is "
+            "already ticked signs you up for marketing or extras unless you notice "
+            "and untick it."
+        ),
+        "advice": "Untick optional boxes before continuing and read what each one signs you up for.",
+    },
+    "urgency_scarcity": {
+        "title": "Urgency and scarcity pressure",
+        "how_it_works": (
+            "Countdowns and 'only a few left' messages trigger fear of missing out. "
+            "Time pressure makes people skip comparing prices and reading terms. "
+            "This tool cannot verify whether the claim is true."
+        ),
+        "advice": "Pause before buying. Reload the page or check elsewhere. A real deadline will still be there.",
+    },
+    "confirm_shaming": {
+        "title": "Confirm-shaming",
+        "how_it_works": (
+            "Wording that makes declining feel foolish or guilty turns a neutral "
+            "choice into an emotional one, nudging you to accept."
+        ),
+        "advice": "Ignore the wording. The choice is still yours, and declining is fine if you don't want the offer.",
+    },
+    "low_prominence_decline": {
+        "title": "Hard-to-find decline option",
+        "how_it_works": (
+            "Accepting is made big and easy while declining is tiny or faint. "
+            "The extra effort of finding it wears people down into accepting."
+        ),
+        "advice": "Look for the small or faint option. It is usually the one that lets you say no.",
+    },
+        "social_proof": {
+        "title": "Social-proof pressure",
+        "how_it_works": (
+            "Messages about how many others are viewing, buying or reviewing trigger "
+            "the bandwagon effect: we assume popular means good or urgent. "
+            "These numbers are often impossible to verify."
+        ),
+        "advice": "Treat such counts as marketing, not evidence. Compare independent reviews.",
+    },
+    "misdirection": {
+        "title": "Wording that steers your choice",
+        "how_it_works": (
+            "Wording that frames one option as smart and the other as foolish, or "
+            "blurs what a choice means, steers decisions through emotion or "
+            "confusion rather than information."
+        ),
+        "advice": "Re-read the options in plain terms: what actually happens if you click each one?",
+    },
+    "other_manipulative": {
+        "title": "Other manipulative design",
+        "how_it_works": (
+            "The text classifier matched a rarer type of manipulative wording "
+            "(such as obstruction, sneaking or forced action). It has few examples "
+            "of these, so treat them as leads to check yourself."
+        ),
+        "advice": "Read this element carefully and check what it commits you to.",
+    },
+        "trial_unclear_terms": {
+        "title": "Unclear free-trial terms",
+        "how_it_works": (
+            "Free trials that don't say what you will pay afterwards rely on inertia: "
+            "people forget to cancel, and the first charge arrives as a surprise."
+        ),
+        "advice": "Before starting, find the price after the trial and the exact date you would be charged. Set a reminder to cancel.",
+    },
+    "obscured_billing_terms": {
+        "title": "Billing terms hidden in small print",
+        "how_it_works": (
+            "Renewal and billing conditions in tiny or faint text are technically "
+            "disclosed but practically unreadable, so people agree without knowing "
+            "what they are committing to."
+        ),
+        "advice": "Zoom in and read the small print before you start. If you cannot find the total cost, treat that as a warning sign.",
+    },
+    "extra_fees": {
+        "title": "Extra fees added to the price",
+        "how_it_works": (
+            "Fees that appear after the headline price make the real cost higher than "
+            "the number that first attracted you (often called drip pricing)."
+        ),
+        "advice": "Compare the final total, not the headline price.",
+    },
+    "monthly_vs_annual": {
+        "title": "Monthly price, annual billing",
+        "how_it_works": (
+            "A low per-month figure anchors your expectation of the cost and can hide "
+            "that a whole year is charged up front."
+        ),
+        "advice": "Look for the total you will be charged today and how often it renews.",
+    }
+}
+
+DEFAULT_TACTIC = {
+    "title": "Other suspicious pattern",
+    "how_it_works": "This element matched a pattern associated with manipulative design.",
+    "advice": "Read this element carefully before acting on it.",
+}
+
+
+def band_for(score):
+    if score == 0:
+        return "None detected"
+    if score < 20:
+        return "Low"
+    if score < 45:
+        return "Moderate"
+    if score < 70:
+        return "High"
+    return "Severe"
+
+
+def build_report(findings):
+    by_category = defaultdict(list)
+    for f in findings:
+        by_category[f.category].append(f)
+
+    total = 0.0
+    tactics = []
+    for category, items in by_category.items():
+        items.sort(key=lambda f: SEVERITY_POINTS[f.severity], reverse=True)
+        points = 0.0
+        for i, f in enumerate(items):
+            factor = REPEAT_FACTOR[min(i, len(REPEAT_FACTOR) - 1)]
+            weight = f.confidence if f.confidence is not None else 1.0
+            points += SEVERITY_POINTS[f.severity] * factor * weight
+        total += points
+
+        info = TACTICS.get(category, DEFAULT_TACTIC)
+        tactics.append(TacticSummary(
+            category=category,
+            title=info["title"],
+            how_it_works=info["how_it_works"],
+            advice=info["advice"],
+            count=len(items),
+            worst_severity=items[0].severity,
+            points=round(points, 1),
+            examples=[f.evidence for f in items[:3]],
+        ))
+
+    tactics.sort(key=lambda t: t.points, reverse=True)
+    score = min(100, round(total))
+    band = band_for(score)
+
+    if not findings:
+        summary = (
+            "No manipulative patterns were detected among the elements this tool checks. "
+            "That does not prove the page is free of them."
+        )
+    else:
+        summary = (
+            f"{len(findings)} suspicious patterns were found across {len(tactics)} "
+            f"tactics. The biggest contributor is \"{tactics[0].title}\". "
+            "The score reflects how manipulative the page design looks, "
+            "not the intent of the site's owner."
+        )
+
+    return score, band, summary, tactics
+</file>
+
+<file path="backend/rules.py">
+import re
+from schemas import Finding, PageElement
+
+# Severity methodology (document this in your report):
+#   low    = wording that may be legitimate and cannot be verified by this tool
+#   medium = interface design that pushes, hides or pre-decides a user's choice
+#   high   = reserved for hidden costs / hidden cancellation (added later)
+SEVERITY = {
+    "preselected_optional": "medium",
+    "urgency_scarcity": "low",
+    "confirm_shaming": "medium",
+    "low_prominence_decline": "medium",
+    "social_proof": "low",
+    "misdirection": "medium",
+    "other_manipulative": "low",
+    "trial_unclear_terms": "medium",
+    "obscured_billing_terms": "high",
+    "extra_fees": "low",
+    "monthly_vs_annual": "medium",
+}
+OPTIONAL_WORDS = [
+    "offers", "newsletter", "partners", "promotions",
+    "marketing", "deals", "updates", "subscribe", "third party", "third-party",
+]
+
+URGENCY_PATTERNS = [
+    r"only \d+ (left|remaining)",
+    r"\bhurry\b",
+    r"(offer|sale|deal) ends",
+    r"ends in \d",
+    r"limited time",
+    r"last chance",
+    r"selling fast",
+    r"almost (gone|sold out)",
+    r"\d+ (people|others|customers) (are )?(viewing|looking|watching)",
+]
+
+SHAMING_PATTERNS = [
+    r"no,? thanks?,? i (hate|don'?t|do not|prefer|like|would rather|'d rather)",
+    r"i (hate|don'?t like|do not like) (saving|discounts|deals|money)",
+    r"i('d| would) rather (pay|miss|not)",
+    r"no,? i (don'?t|do not) (want|need|like)",
+    r"i (don'?t|do not) want to (save|be|get)",
+]
+
+DECLINE_WORDS = [
+    "no thanks", "no, thanks", "no thank you", "not now",
+    "maybe later", "skip", "decline", "i'll pass",
+]
+
+SMALL_FONT_PX = 11
+MIN_CONTRAST = 3.0
+
+
+def normalize(text: str) -> str:
+    # lowercase, and turn curly apostrophes into normal ones
+    return text.lower().replace("\u2019", "'").strip()
+
+
+def make_finding(el, category, evidence, explanation):
+    return Finding(
+        element_id=el.id,
+        category=category,
+        method="rule",
+        confidence=None,
+        severity=SEVERITY[category],
+        evidence=evidence,
+        explanation=explanation,
+    )
+
+
+# ---------- colour helpers (for the contrast check) ----------
+
+def parse_color(css):
+    if not css.startswith("rgb"):
+        return None
+    nums = re.findall(r"[\d.]+", css)
+    if len(nums) < 3:
+        return None
+    r, g, b = float(nums[0]), float(nums[1]), float(nums[2])
+    a = float(nums[3]) if len(nums) > 3 else 1.0
+    return (r, g, b, a)
+
+
+def luminance(r, g, b):
+    def channel(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b)
+
+
+def contrast_ratio(fg, bg):
+    l1 = luminance(fg[0], fg[1], fg[2])
+    l2 = luminance(bg[0], bg[1], bg[2])
+    lighter, darker = max(l1, l2), min(l1, l2)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def text_contrast(styles):
+    fg = parse_color(styles.color)
+    if fg is None:
+        return None
+    bg = parse_color(styles.backgroundColor)
+    if bg is None or bg[3] == 0:      # transparent background: assume white page
+        bg = (255, 255, 255, 1.0)
+    return contrast_ratio(fg, bg)
+
+
+def parse_px(value):
+    try:
+        return float(value.replace("px", "").strip())
+    except ValueError:
+        return None
+
+
+# ---------- the four rules ----------
+
+def check_preselected(el):
+    if el.tag != "input" or not el.checked:
+        return None
+    text = normalize(el.text)
+    hits = [w for w in OPTIONAL_WORDS if w in text]
+    if not hits:
+        return None
+    return make_finding(
+        el, "preselected_optional",
+        f'Checkbox is already ticked and its label mentions "{hits[0]}"',
+        "Optional marketing or add-on choices should start unticked so the user opts in deliberately.",
+    )
+
+
+def check_urgency(el):
+    if el.tag == "input":      # input text is borrowed from its label, which is checked separately
+        return None
+    text = normalize(el.text)
+    for pattern in URGENCY_PATTERNS:
+        m = re.search(pattern, text)
+        if m:
+            return make_finding(
+                el, "urgency_scarcity",
+                f'Urgency or scarcity wording: "{m.group(0)}"',
+                "Urgency and scarcity claims can pressure quick decisions. This tool cannot check whether the claim is true.",
+            )
+    return None
+
+
+def check_confirm_shaming(el):
+    if el.tag not in ("a", "button"):
+        return None
+    text = normalize(el.text)
+    for pattern in SHAMING_PATTERNS:
+        m = re.search(pattern, text)
+        if m:
+            return make_finding(
+                el, "confirm_shaming",
+                f'Refusal wording: "{m.group(0)}"',
+                "The wording may make users feel guilty or foolish for declining the offer.",
+            )
+    return None
+
+
+def check_low_prominence_decline(el):
+    if el.tag not in ("a", "button"):
+        return None
+    text = normalize(el.text)
+    if not any(w in text for w in DECLINE_WORDS):
+        return None
+
+    problems = []
+    size = parse_px(el.styles.fontSize)
+    if size is not None and size <= SMALL_FONT_PX:
+        problems.append(f"font size {size:g}px")
+    ratio = text_contrast(el.styles)
+    if ratio is not None and ratio < MIN_CONTRAST:
+        problems.append(f"text contrast {ratio:.1f}:1")
+    if not problems:
+        return None
+
+    return make_finding(
+        el, "low_prominence_decline",
+        "Decline option is hard to see: " + ", ".join(problems),
+        "A tiny or faint decline option makes refusing harder than accepting.",
+    )
+
+
+CHECKS = [
+    check_preselected,
+    check_urgency,
+    check_confirm_shaming,
+    check_low_prominence_decline,
+]
+
+
+def run_rules(elements):
+    findings = []
+    seen = set()
+    for el in elements:
+        for check in CHECKS:
+            f = check(el)
+            if f is None:
+                continue
+            key = (f.element_id, f.category)    # one finding per element per category
+            if key in seen:
+                continue
+            seen.add(key)
+            findings.append(f)
+    return findings
+</file>
+
+<file path="backend/schemas.py">
+from typing import List, Optional
+from pydantic import BaseModel
+
+
+class Rect(BaseModel):
+    top: int
+    left: int
+    width: int
+    height: int
+
+
+class Styles(BaseModel):
+    fontSize: str = ""
+    color: str = ""
+    backgroundColor: str = ""
+    opacity: str = "1"
+
+
+class PageElement(BaseModel):
+    id: int
+    tag: str
+    text: str
+    checked: bool = False
+    rect: Rect
+    styles: Styles
+
+
+class AnalyzeRequest(BaseModel):
+    url: str
+    elements: List[PageElement] = []
+
+
+class Finding(BaseModel):
+    element_id: int
+    category: str
+    method: str
+    confidence: Optional[float] = None
+    severity: str
+    evidence: str
+    explanation: str
+
+
+class TacticSummary(BaseModel):
+    category: str
+    title: str
+    how_it_works: str
+    advice: str
+    count: int
+    worst_severity: str
+    points: float
+    examples: List[str]
+
+
+class AnalyzeResponse(BaseModel):
+    elements_analyzed: int
+    findings: List[Finding]
+    counts: dict
+    risk_score: int
+    risk_band: str
+    summary: str
+    tactics: List[TacticSummary]
+
+class AnalyzeRequest(BaseModel):
+    url: str
+    elements: List[PageElement] = []
+    mode: str = "hybrid"   # "rules", "ml" or "hybrid" (used for experiments E1-E3 in Step 8)
+</file>
+
+<file path="extension/background.js">
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.type === "ANALYZE") {
+    fetch("http://127.0.0.1:8000/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: msg.url, elements: msg.elements })
+    })
+      .then((r) => r.json())
+      .then((data) => sendResponse(data))
+      .catch((err) => sendResponse({ error: err.toString() }));
+    return true;
+  }
+});
+</file>
+
+<file path="extension/content.js">
+let lastResult = null;
+
+const SEVERITY_COLORS = { high: "#d32f2f", medium: "#ef6c00", low: "#f9a825" };
+const SEVERITY_RANK = { low: 1, medium: 2, high: 3 };
+const LEAF_ONLY = ["div", "li", "td"]; // only read these when they hold just text, to avoid duplicates
+
+function getLabelText(node) {
+  const parentLabel = node.closest("label");
+  if (parentLabel) return parentLabel.innerText.trim();
+  if (node.id) {
+    const label = document.querySelector('label[for="' + node.id + '"]');
+    if (label) return label.innerText.trim();
+  }
+  return "";
+}
+
+function collectElements() {
+  const selector =
+    "button, a, label, h1, h2, h3, h4, p, span, strong, b, " +
+    "div, li, td, small, del, s, strike, " +
+    "input[type='checkbox'], input[type='radio'], " +
+    "[class*='timer'], [class*='countdown'], [class*='urgent']";
+
+  const nodes = document.querySelectorAll(selector);
+  const elements = [];
+  let counter = 0;
+
+  for (const node of nodes) {
+    if (elements.length >= 500) break; // safety limit
+
+    const tag = node.tagName.toLowerCase();
+    if (LEAF_ONLY.includes(tag) && node.children.length > 0) continue;
+
+    const rect = node.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) continue; // invisible
+
+    const isInput = tag === "input";
+    const text = isInput ? getLabelText(node) : node.innerText.trim();
+    if (text === "") continue;
+    if (!isInput && text.length > 250) continue; // long paragraphs aren't buttons or labels
+
+    const style = window.getComputedStyle(node);
+    node.setAttribute("data-dpd-id", counter);
+
+    elements.push({
+      id: counter,
+      tag: tag,
+      text: text.slice(0, 300),
+      checked: node.checked === true,
+      rect: {
+        top: Math.round(rect.top + window.scrollY),
+        left: Math.round(rect.left + window.scrollX),
+        width: Math.round(rect.width),
+        height: Math.round(rect.height)
+      },
+      styles: {
+        fontSize: style.fontSize,
+        color: style.color,
+        backgroundColor: style.backgroundColor,
+        opacity: style.opacity
+      }
+    });
+    counter++;
+  }
+  return elements;
+}
+
+function clearHighlights() {
+  document.querySelectorAll("[data-dpd-outlined]").forEach((n) => {
+    n.style.removeProperty("outline");
+    n.style.removeProperty("outline-offset");
+    n.removeAttribute("data-dpd-outlined");
+  });
+}
+
+// Outlines the real element on the page, so it can never drift out of place
+function highlightFindings(findings) {
+  clearHighlights();
+
+  const worst = {}; // element id -> most severe level
+  findings.forEach((f) => {
+    const current = worst[f.element_id];
+    if (!current || SEVERITY_RANK[f.severity] > SEVERITY_RANK[current]) {
+      worst[f.element_id] = f.severity;
+    }
+  });
+
+  Object.keys(worst).forEach((id) => {
+    const node = document.querySelector('[data-dpd-id="' + id + '"]');
+    if (!node) return;
+    // for a checkbox, outline its whole label so the box is easy to see
+    const target = (node.tagName === "INPUT" && node.closest("label")) || node;
+    target.style.setProperty("outline", "3px solid " + SEVERITY_COLORS[worst[id]], "important");
+    target.style.setProperty("outline-offset", "3px", "important");
+    target.setAttribute("data-dpd-outlined", "1");
+  });
+}
+
+function runScan() {
+  clearHighlights();
+  document.querySelectorAll("[data-dpd-id]").forEach((n) => n.removeAttribute("data-dpd-id"));
+
+  const elements = collectElements();
+  console.log("Dark Pattern Detector: collected", elements.length, "elements");
+
+  chrome.runtime.sendMessage(
+    { type: "ANALYZE", url: window.location.href, elements: elements },
+    (response) => {
+      if (!response || response.error || !response.findings) {
+        console.log("Dark Pattern Detector: backend problem", response);
+        return;
+      }
+      lastResult = response;
+      console.log("Dark Pattern Detector: findings", response.findings);
+      highlightFindings(response.findings);
+    }
+  );
+}
+
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.type === "GET_RESULT") {
+    sendResponse(lastResult);
+  }
+  if (msg.type === "FOCUS") {
+    const node = document.querySelector('[data-dpd-id="' + msg.id + '"]');
+    if (node) node.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+});
+
+runScan();
+</file>
+
+<file path="extension/manifest.json">
+{
+  "manifest_version": 3,
+  "name": "Dark Pattern Detector",
+  "version": "0.2",
+  "description": "Detects manipulative design on webpages",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+</file>
+
+<file path="extension/popup.html">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; width: 320px; padding: 12px; }
+    #score { font-size: 34px; font-weight: bold; }
+    #band { font-size: 15px; color: #444; margin-bottom: 6px; }
+    #summary { color: #555; font-size: 12px; }
+    button { margin: 10px 0; padding: 8px 12px; cursor: pointer; display: none; }
+    ul { padding-left: 0; list-style: none; }
+    li { border-left: 5px solid #999; padding: 6px 8px; margin: 8px 0;
+         background: #f6f6f6; cursor: pointer; font-size: 13px; }
+    li.high { border-color: #d32f2f; }
+    li.medium { border-color: #ef6c00; }
+    li.low { border-color: #f9a825; }
+    .title { font-weight: bold; }
+    .evidence { color: #333; margin-top: 3px; }
+    .why { color: #666; margin-top: 3px; }
+  </style>
+</head>
+<body>
+  <h3>Dark Pattern Detector</h3>
+  <div id="score">--</div>
+  <div id="band">Scanning...</div>
+  <div id="summary"></div>
+  <button id="openReport">Open full report</button>
+  <ul id="findings"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>
+</file>
+
+<file path="extension/popup.js">
+function pretty(category) {
+  return category.replace(/_/g, " ");
+}
+
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  const tabId = tabs[0].id;
+  const pageUrl = tabs[0].url;
+
+  chrome.tabs.sendMessage(tabId, { type: "GET_RESULT" }, (result) => {
+    if (chrome.runtime.lastError || !result) {
+      document.getElementById("band").textContent = "No result yet";
+      document.getElementById("summary").textContent =
+        "Open a normal website, refresh it, then reopen this popup.";
+      return;
+    }
+
+    document.getElementById("score").textContent = result.risk_score + " / 100";
+    document.getElementById("band").textContent = "Manipulation risk: " + result.risk_band;
+    document.getElementById("summary").textContent = result.summary;
+
+    const button = document.getElementById("openReport");
+    button.style.display = "inline-block";
+    button.addEventListener("click", () => {
+      chrome.storage.local.set({ report: result, pageUrl: pageUrl }, () => {
+        chrome.tabs.create({ url: chrome.runtime.getURL("report.html") });
+      });
+    });
+
+    const list = document.getElementById("findings");
+    result.findings.forEach((f) => {
+      const li = document.createElement("li");
+      li.className = f.severity;
+
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = pretty(f.category) + " (" + f.severity + ")";
+
+      const evidence = document.createElement("div");
+      evidence.className = "evidence";
+      evidence.textContent = f.evidence;
+
+      li.append(title, evidence);
+      li.addEventListener("click", () => {
+        chrome.tabs.sendMessage(tabId, { type: "FOCUS", id: f.element_id });
+      });
+      list.appendChild(li);
+    });
+  });
+});
+</file>
+
+<file path="extension/report.html">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulation Risk Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 820px; margin: 30px auto; padding: 0 16px; color: #222; }
+    .url { color: #666; font-size: 13px; word-break: break-all; }
+    .scorebox { display: flex; align-items: baseline; gap: 16px; margin: 20px 0 8px; }
+    .score { font-size: 56px; font-weight: bold; }
+    .band { font-size: 22px; font-weight: bold; }
+    .band-nonedetected .band { color: #2e7d32; }
+    .band-low .band { color: #f9a825; }
+    .band-moderate .band { color: #ef6c00; }
+    .band-high .band { color: #d84315; }
+    .band-severe .band { color: #b71c1c; }
+    .bar { background: #eee; height: 12px; border-radius: 6px; overflow: hidden; }
+    .fill { background: linear-gradient(90deg, #f9a825, #d32f2f); height: 100%; }
+    .summary { margin: 14px 0 24px; line-height: 1.5; }
+    .card { border: 1px solid #ddd; border-left: 6px solid #999; border-radius: 6px; padding: 4px 16px; margin: 14px 0; }
+    .card.sev-low { border-left-color: #f9a825; }
+    .card.sev-medium { border-left-color: #ef6c00; }
+    .card.sev-high { border-left-color: #d32f2f; }
+    .advice { background: #f1f8e9; padding: 8px 10px; border-radius: 4px; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; }
+    th { background: #f6f6f6; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="report.js"></script>
+</body>
+</html>
+</file>
+
+<file path="extension/report.js">
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+chrome.storage.local.get(["report", "pageUrl"], (data) => {
+  const r = data.report;
+  const root = document.getElementById("root");
+
+  if (!r) {
+    root.append(el("p", "", "No report found. Scan a page, then click Open full report in the popup."));
+    return;
+  }
+
+  root.append(el("h1", "", "Manipulation Risk Report"));
+  root.append(el("div", "url", data.pageUrl || ""));
+
+  const bandClass = "band-" + r.risk_band.replace(/\s/g, "").toLowerCase();
+  const scoreBox = el("div", "scorebox " + bandClass);
+  scoreBox.append(el("div", "score", r.risk_score + " / 100"));
+  scoreBox.append(el("div", "band", r.risk_band));
+  root.append(scoreBox);
+
+  const bar = el("div", "bar");
+  const fill = el("div", "fill");
+  fill.style.width = r.risk_score + "%";
+  bar.append(fill);
+  root.append(bar);
+
+  root.append(el("p", "summary", r.summary));
+
+  root.append(el("h2", "", "How this page tries to influence you"));
+  if (r.tactics.length === 0) {
+    root.append(el("p", "", "Nothing was flagged."));
+  }
+  r.tactics.forEach((t) => {
+    const card = el("div", "card sev-" + t.worst_severity);
+    card.append(el("h3", "", t.title + " (" + t.count + " found, " + t.worst_severity + " severity)"));
+    card.append(el("p", "", t.how_it_works));
+    const list = el("ul");
+    t.examples.forEach((e) => list.append(el("li", "", "Evidence: " + e)));
+    card.append(list);
+    card.append(el("p", "advice", "What you can do: " + t.advice));
+    root.append(card);
+  });
+
+  root.append(el("h2", "", "All findings"));
+  const table = el("table");
+  const head = el("tr");
+  ["Pattern", "Severity", "Method", "Confidence", "Evidence"].forEach((h) => head.append(el("th", "", h)));
+  table.append(head);
+  r.findings.forEach((f) => {
+    const row = el("tr");
+    row.append(el("td", "", f.category.replace(/_/g, " ")));
+    row.append(el("td", "", f.severity));
+    row.append(el("td", "", f.method));
+    row.append(el("td", "", f.confidence == null ? "n/a (rule)" : Math.round(f.confidence * 100) + "%"));
+    row.append(el("td", "", f.evidence));
+    table.append(row);
+  });
+  root.append(table);
+
+  root.append(el("h2", "", "What this report does not cover"));
+  const limits = el("ul");
+  [
+    "Only visible text, buttons, links, labels and headings are checked. Images, videos and content loaded after the scan are not analysed.",
+    "It cannot verify claims such as stock levels or deadlines, so urgency findings are low severity.",
+    "Rule-based findings have no confidence value. Machine-learning findings show the model's confidence, which is not a guarantee.",
+    "The score reflects how manipulative the design looks, not the intent or honesty of the site's owner."
+  ].forEach((t) => limits.append(el("li", "", t)));
+  root.append(limits);
+});
+</file>
+
+<file path="testpage/clean-page.html">
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Everyday Books (clean test page)</title></head>
+<body style="font-family: Arial; padding: 20px;">
+  <h1>Everyday Books</h1>
+  <p>Free delivery on orders above ₹499.</p>
+  <label><input type="checkbox"> Email me about new arrivals</label>
+  <br><br>
+  <button style="font-size:16px; padding:8px 16px;">Add to cart</button>
+  <button style="font-size:16px; padding:8px 16px;">No thanks</button>
+  <br><br>
+  <a href="#">Contact us</a>
+</body>
+</html>
+</file>
+
+<file path="testpage/pricing-clean.html">
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>FlixMax Premium (clear pricing test page)</title></head>
+<body style="font-family: Arial; padding: 20px;">
+  <h1>FlixMax Premium</h1>
+  <h2>7-day free trial, then ₹299/month</h2>
+  <p>Cancel any time before 25 October to avoid being charged. Auto-renews monthly.</p>
+  <button style="font-size:16px; padding:8px 16px;">Start free trial</button>
+</body>
+</html>
+</file>
+
+<file path="testpage/pricing-page.html">
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>FlixMax Premium (pricing test page)</title></head>
+<body style="font-family: Arial; padding: 20px;">
+  <h1>FlixMax Premium</h1>
+  <h2 style="font-size:36px;">Start your 7-day free trial</h2>
+  <p style="font-size:30px;"><b>₹99</b> / month</p>
+  <button style="font-size:20px; padding:12px 24px;">Start free trial</button>
+  <p style="font-size:9px; color:#bbbbbb;">Billed annually. Auto-renews at the end of the trial. Cancellation fee applies.</p>
+  <p>Convenience fee ₹49 added at checkout</p>
+</body>
+</html>
+</file>
+
+<file path="testpage/test-page.html">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Super Shoes Store (test page)</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+  <h1>Super Shoes Store</h1>
+
+  <p id="timer" class="countdown-timer">Hurry! Offer ends in 09:59</p>
+  <p>Only 2 left in stock!</p>
+
+  <label>
+    <input type="checkbox" checked>
+    Yes, send me offers from partners
+  </label>
+
+  <br><br>
+  <button>Buy now</button>
+  <br><br>
+  <a href="#" style="font-size: 9px; color: #cccccc;">No thanks, I hate saving money</a>
+
+  <script>
+    let seconds = 599;
+    setInterval(() => {
+      seconds--;
+      const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+      const s = String(seconds % 60).padStart(2, "0");
+      document.getElementById("timer").textContent = "Hurry! Offer ends in " + m + ":" + s;
+    }, 1000);
+  </script>
+</body>
+</html>
+</file>
+
+</files>
