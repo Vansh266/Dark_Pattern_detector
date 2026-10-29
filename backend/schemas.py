@@ -1,6 +1,5 @@
-from typing import List, Optional
-from pydantic import BaseModel
-
+from typing import List, Optional, Literal
+from pydantic import BaseModel, Field
 
 class Rect(BaseModel):
     top: int
@@ -21,13 +20,11 @@ class PageElement(BaseModel):
     tag: str
     text: str
     checked: bool = False
+    inputType: str = ""
+    disabled: bool = False
+    required: bool = False
     rect: Rect
     styles: Styles
-
-
-class AnalyzeRequest(BaseModel):
-    url: str
-    elements: List[PageElement] = []
 
 
 class Finding(BaseModel):
@@ -62,5 +59,5 @@ class AnalyzeResponse(BaseModel):
 
 class AnalyzeRequest(BaseModel):
     url: str
-    elements: List[PageElement] = []
-    mode: str = "hybrid"   # "rules", "ml" or "hybrid" (used for experiments E1-E3 in Step 8)
+    elements: List[PageElement] = Field(default_factory=list)
+    mode: Literal["rules", "ml", "hybrid"] = "hybrid"

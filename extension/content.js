@@ -47,6 +47,9 @@ function collectElements() {
       tag: tag,
       text: text.slice(0, 300),
       checked: node.checked === true,
+      inputType: isInput ? node.type : "",
+disabled: isInput ? node.disabled === true : false,
+required: isInput ? node.required === true : false,
       rect: {
         top: Math.round(rect.top + window.scrollY),
         left: Math.round(rect.left + window.scrollX),

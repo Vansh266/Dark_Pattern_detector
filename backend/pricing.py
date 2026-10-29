@@ -23,6 +23,22 @@ MONTHLY = re.compile(r"/\s?(?:mo|month)\b|per month|a month|monthly")
 ANNUAL_BILLED = re.compile(r"(?:billed|charged|paid) (?:annually|yearly|once a year|upfront)")
 YEARLY_TOTAL = re.compile(r"per year|/\s?(?:yr|year)\b|annually|yearly|a year|total")
 FEE = re.compile(r"(?:service|convenience|handling|processing|booking|platform|delivery) fees?")
+FEE_LATE = re.compile(
+    r"added at checkout|added during checkout|"
+    r"revealed at (?:checkout|payment)|"
+    r"applied at checkout|"
+    r"charged at checkout|"
+    r"extra charge at checkout|"
+    r"not included in (?:the )?(?:shown |displayed )?price"
+)
+
+FEE_INCLUDED = re.compile(
+    r"included in (?:the )?(?:total|price)|"
+    r"already included|"
+    r"no additional (?:fees|charges)|"
+    r"no (?:service|delivery|processing|booking) fee|"
+    r"all fees included"
+)
 
 
 def short(text):
@@ -85,14 +101,30 @@ def run_pricing(elements):
                     "Renewal and billing conditions in tiny or faint text are technically disclosed "
                     "but practically unreadable.")
 
-    # 3. Extra fees shown with an amount
+    # 3. Detect potentially delayed or hidden extra fees
     for el, t in items:
-        if FEE.search(t) and AMOUNT.search(t):
-            add(el, "extra_fees",
-                f'Additional fee shown: "{short(el.text)}"',
-                "Fees added after the headline price make the real cost higher than the number "
-                "that first attracted you.")
 
+        # A fee and monetary amount must both be present
+        if not (FEE.search(t) and AMOUNT.search(t)):
+            continue
+
+        # Clearly included fees are not automatically suspicious
+        if FEE_INCLUDED.search(t):
+            continue
+
+        # Flag language indicating later fee disclosure
+        if FEE_LATE.search(t):
+            add(
+                el,
+                "extra_fees",
+                f'Potentially delayed fee: "{short(el.text)}"',
+                (
+                    "The page indicates that an additional fee may "
+                    "be applied later in the purchase process. "
+                    "Check the final price before proceeding."
+                )
+            )
+            
     # 4. Monthly price shown, annual billing mentioned, no yearly total visible
     monthly_els = [el for el, t in items if AMOUNT.search(t) and MONTHLY.search(t)]
     annual_els = [el for el, t in items if ANNUAL_BILLED.search(t)]

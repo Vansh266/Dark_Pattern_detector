@@ -22,4 +22,13 @@ def merge_findings(rule_findings, ml_findings):
             target.method = "rule+ml"
             target.confidence = m.confidence
             target.evidence = target.evidence + " | " + m.evidence
+    # Correct category when ML identifies social proof
+    # that the urgency rule also detected
+            if (
+                m.category == "social_proof"
+                and target.category == "urgency_scarcity"
+            ):
+                target.category = "social_proof"
+                target.severity = m.severity
+                target.explanation = m.explanation            
     return merged

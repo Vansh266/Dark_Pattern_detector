@@ -19,8 +19,25 @@ SEVERITY = {
     "monthly_vs_annual": "medium",
 }
 OPTIONAL_WORDS = [
-    "offers", "newsletter", "partners", "promotions",
-    "marketing", "deals", "updates", "subscribe", "third party", "third-party",
+    "offers",
+    "newsletter",
+    "partners",
+    "promotions",
+    "marketing",
+    "deals",
+    "updates",
+    "subscribe",
+    "third party",
+    "third-party",
+    "warranty",
+    "insurance",
+    "protection plan",
+    "gift wrap",
+    "gift wrapping",
+    "donation",
+    "extended coverage",
+    "add-on",
+    "optional extra",
 ]
 
 URGENCY_PATTERNS = [
@@ -116,18 +133,37 @@ def parse_px(value):
 # ---------- the four rules ----------
 
 def check_preselected(el):
-    if el.tag != "input" or not el.checked:
+    if el.tag != "input":
         return None
+
+    # Only checkbox inputs are relevant
+    if el.inputType != "checkbox":
+        return None
+
+    # Ignore disabled or mandatory checkboxes
+    if el.disabled or el.required:
+        return None
+
+    if not el.checked:
+        return None
+
     text = normalize(el.text)
-    hits = [w for w in OPTIONAL_WORDS if w in text]
+
+    hits = [
+        word for word in OPTIONAL_WORDS
+        if word in text
+    ]
+
     if not hits:
         return None
-    return make_finding(
-        el, "preselected_optional",
-        f'Checkbox is already ticked and its label mentions "{hits[0]}"',
-        "Optional marketing or add-on choices should start unticked so the user opts in deliberately.",
-    )
 
+    return make_finding(
+        el,
+        "preselected_optional",
+        f'Preselected optional choice detected: "{el.text}"',
+        "An optional choice is already selected, potentially causing "
+        "unwanted subscriptions, marketing consent, or extra charges."
+    )
 
 def check_urgency(el):
     if el.tag == "input":      # input text is borrowed from its label, which is checked separately
