@@ -131,9 +131,28 @@ def build_report(findings):
         items.sort(key=lambda f: SEVERITY_POINTS[f.severity], reverse=True)
         points = 0.0
         for i, f in enumerate(items):
-            factor = REPEAT_FACTOR[min(i, len(REPEAT_FACTOR) - 1)]
-            weight = f.confidence if f.confidence is not None else 1.0
-            points += SEVERITY_POINTS[f.severity] * factor * weight
+            factor = REPEAT_FACTOR[
+                min(i, len(REPEAT_FACTOR) - 1)
+            ]
+
+            # Rule-based findings have full weight.
+            # ML agreement must not reduce rule severity.
+            if f.method in ("rule", "rule+ml"):
+                weight = 1.0
+
+            # ML-only findings use model probability.
+            else:
+                weight = (
+                    f.confidence
+                    if f.confidence is not None
+                    else 1.0
+                )
+
+            points += (
+                SEVERITY_POINTS[f.severity]
+                * factor
+                * weight
+            )
         total += points
 
         info = TACTICS.get(category, DEFAULT_TACTIC)

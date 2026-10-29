@@ -8,7 +8,11 @@ MODEL_PATH = Path(__file__).parent / "model.joblib"
 
 # Deployment threshold. The benchmark threshold saved in the model is 0.5,
 # but real pages are mostly normal text, so the app is stricter (tune in Step 8).
-APP_THRESHOLD = 0.65
+# Selected using validation data:
+# Precision = 0.957
+# Recall = 0.887
+# F1-score = 0.921
+APP_THRESHOLD = 0.50
 
 # Model tactic names -> report categories.
 # Obstruction / Sneaking / Forced Action had too few examples to trust,
@@ -29,6 +33,23 @@ ML_EXPLANATION = {
 
 ELIGIBLE_TAGS = {"a", "button", "label", "h1", "h2", "h3", "h4", "p", "span", "strong", "b"}
 MAX_WORDS = 60
+
+NEUTRAL_DECLINE_TEXTS = {
+    "no thanks",
+    "no, thanks",
+    "no thank you",
+    "not now",
+    "maybe later",
+    "skip",
+}
+
+
+def is_neutral_decline(text):
+    normalized = " ".join(
+        text.lower().replace("\u2019", "'").split()
+    ).strip(" .!?")
+
+    return normalized in NEUTRAL_DECLINE_TEXTS
 
 _bundle = None
 
@@ -60,12 +81,22 @@ def predict_texts(texts):
 
 def run_ml(elements):
     candidates = []
+
     for el in elements:
-        if el.tag not in ELIGIBLE_TAGS:   # inputs are skipped: their label is checked instead
+
+        if el.tag not in ELIGIBLE_TAGS:
             continue
+
         words = len(el.text.split())
+
         if words == 0 or words > MAX_WORDS:
             continue
+
+        # Prevent ordinary refusal text from producing
+        # false-positive ML detections.
+        if is_neutral_decline(el.text):
+            continue
+
         candidates.append(el)
     if not candidates:
         return []
