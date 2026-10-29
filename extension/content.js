@@ -4,6 +4,28 @@ const SEVERITY_COLORS = { high: "#d32f2f", medium: "#ef6c00", low: "#f9a825" };
 const SEVERITY_RANK = { low: 1, medium: 2, high: 3 };
 const LEAF_ONLY = ["div", "li", "td"]; // only read these when they hold just text, to avoid duplicates
 
+function isNestedDuplicate(node, text) {
+  const normalizedText = text.replace(/\s+/g, " ").trim();
+
+  let parent = node.parentElement;
+
+  while (parent) {
+    if (parent.hasAttribute("data-dpd-id")) {
+      const parentText = (parent.innerText || "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (parentText === normalizedText) {
+        return true;
+      }
+    }
+
+    parent = parent.parentElement;
+  }
+
+  return false;
+}
+
 function getLabelText(node) {
   const parentLabel = node.closest("label");
   if (parentLabel) return parentLabel.innerText.trim();
@@ -38,6 +60,10 @@ function collectElements() {
     const text = isInput ? getLabelText(node) : node.innerText.trim();
     if (text === "") continue;
     if (!isInput && text.length > 250) continue; // long paragraphs aren't buttons or labels
+    // Avoid collecting the same text from nested elements
+    if (!isInput && isNestedDuplicate(node, text)) {
+      continue;
+    }
 
     const style = window.getComputedStyle(node);
     node.setAttribute("data-dpd-id", counter);
@@ -109,10 +135,28 @@ function runScan() {
   chrome.runtime.sendMessage(
     { type: "ANALYZE", url: window.location.href, elements: elements },
     (response) => {
-      if (!response || response.error || !response.findings) {
-        console.log("Dark Pattern Detector: backend problem", response);
-        return;
-      }
+      const runtimeError = chrome.runtime.lastError?.message;
+
+      if (
+      runtimeError ||
+      !response ||
+      response.error ||
+      !Array.isArray(response.findings)
+    ) {
+      lastResult = {
+        error:
+          runtimeError ||
+          response?.error ||
+          "Invalid response from analysis backend."
+      };
+
+      console.error(
+        "Dark Pattern Detector:",
+        lastResult.error
+      );
+
+      return;
+    }
       lastResult = response;
       console.log("Dark Pattern Detector: findings", response.findings);
       highlightFindings(response.findings);

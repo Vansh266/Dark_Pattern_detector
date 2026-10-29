@@ -13,7 +13,16 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         "Open a normal website, refresh it, then reopen this popup.";
       return;
     }
+    if (result.error) {
+      document.getElementById("band").textContent =
+        "Analysis failed";
 
+      document.getElementById("summary").textContent =
+        result.error +
+        " — Check that the FastAPI backend is running.";
+
+      return;
+    }
     document.getElementById("score").textContent = result.risk_score + " / 100";
     document.getElementById("band").textContent = "Manipulation risk: " + result.risk_band;
     document.getElementById("summary").textContent = result.summary;
